@@ -33,9 +33,47 @@ git add TODO.md
 git commit -m "タスクを更新: ○○を完了"
 ```
 
+## GitHub上での管理
+
+このリポジトリはGitHub上で公開されています: https://github.com/Mako-Zaki/git-task-management
+
+### GitHub経由での変更をプッシュする
+
+```bash
+# 変更をコミット
+git add TODO.md
+git commit -m "タスク更新: ○○を完了"
+
+# GitHubにプッシュ
+git push origin main
+```
+
+### 他の端末から最新の変更を取得する
+
+```bash
+# 最新の変更を取得
+git pull origin main
+```
+
+### 新しい機能ブランチをGitHubにプッシュ
+
+```bash
+# 新しいブランチを作成
+git checkout -b feature/新機能
+
+# タスクを追加してコミット
+git add TODO.md
+git commit -m "タスク追加: 新機能のタスクを追加"
+
+# GitHubにプッシュ
+git push -u origin feature/新機能
+```
+
 ## メリット
 
 - タスクの履歴がGitで管理される
 - いつ、どのタスクが完了したかが分かる
 - ブランチを使って、機能ごとにタスクを管理できる
 - チームで共有しやすい
+- GitHub上でリモート管理できる
+- 複数の端末から同じタスクリストにアクセスできる
