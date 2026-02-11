@@ -1,158 +1,184 @@
 # Gitタスク管理システム
 
-人生に関わる全てのタスクを一元管理するシステムです。研究、就職活動、日常タスクなど、多方面のタスクをGitで履歴管理します。
+研究、就職活動、日常タスクなど、あらゆるタスクをGit + GitHub Issues + Projectsで一元管理するシステムです。
 
-## ✨ 主な機能
+## 全体構成
 
-1. **📝 TODO.md** - カテゴリ別タスク管理
-2. **⏰ 期限チェック** - 自動で期限が近いタスクを通知
-3. **🔄 GitHub Issues連携** - TODO.mdから自動でIssue作成
-4. **📊 Projectボード** - カンバン形式で視覚的に管理
-
-### クイックスタート
-
-```bash
-# 期限が近いタスクをチェック
-python3 scripts/check_deadlines.py
-
-# TODO.mdからGitHub Issuesを作成
-python3 scripts/sync_to_issues.py
+```
+TODO.md（ローカル） ⇄ GitHub Issues + Projects（リモート）
+         ↕                      ↕
+     git commit             チェックリスト / カンバン
 ```
 
-詳しい設定方法は [PROJECT_SETUP.md](PROJECT_SETUP.md) を参照してください。
+**todo-push**: TODO.md → Issues / Projects / git に反映
+**todo-pull**: Issues / Projects → TODO.md / git に反映
 
-## TODO.mdの構造
+## クイックスタート
 
-`TODO.md`は以下のカテゴリで構成されています：
+```bash
+# エイリアスを反映
+source ~/.zshrc
 
-- **🔥 緊急・重要** - 最優先で対応すべきタスク
-- **🎓 研究関連** - 論文、実験、文献調査など
-- **💼 就職活動** - ES提出、面接対策、説明会など
-- **📅 日常・予定** - 買い物、手続き、イベントなど
-- **💡 個人プロジェクト** - 開発、学習、趣味など
-- **📝 メモ・アイデア** - 後で整理するメモ
+# ローカルの変更をGitHubに同期
+todo-push
 
-## 基本的な使い方
+# GitHubの変更をローカルに同期
+todo-pull
 
-### 1. タスクを追加する
+# 期限チェック
+todo-deadline
 
-該当するカテゴリの「未着手」セクションにタスクを追加します。
+# TODO.mdを開く
+todo
+
+# Projectボードをブラウザで開く
+todo-board
+```
+
+## TODO.mdの書き方
+
+### チェックボックス記法
 
 ```markdown
-- [ ] 論文レビュー (期限: 2026-03-01)
-- [ ] ○○社ES提出 (締切: 2026-02-20)
+- [ ] 未着手 (Todo)
+- [-] 進行中 (In Progress)
+- [x] 完了 (Done)
 ```
 
-**書き方のコツ:**
-- 期限がある場合は `(期限: YYYY-MM-DD)` を記載
-- 優先度が高い場合は🔥緊急セクションにも追加
-- 具体的なタスク名にする（例: ❌「研究」→ ⭕「Chapter 3のデータ分析」）
+| 記法 | 状態 | Project上 |
+|------|------|-----------|
+| `- [ ]` | 未着手 | Todo |
+| `- [-]` | 進行中 | In Progress |
+| `- [x]` | 完了 | Done（Issue自動クローズ） |
 
-### 2. タスクを開始する
+### 企業タスクの構造
 
-「進行中」セクションに移動して、開始日を記録します。
+企業が**親タスク（= 1 Issue）**、個別作業が**サブタスク（= Issue内チェックリスト）**になります。
 
 ```markdown
-- [ ] 論文レビュー (開始: 2026-02-11、期限: 2026-03-01)
+- [ ] **三菱商事**（商社）
+  - [ ] ES提出（締切: 2/17）
+  - [x] Webテスト（締切: 2/18）
+  - [ ] AI面接（締切: 2/20）
 ```
 
-### 3. タスクを完了する
+サブタスクの完了状況でProjectステータスが自動判定されます：
+- 全部 `[ ]` → **Todo**
+- 一部 `[x]` → **In Progress**
+- 全部 `[x]` → **Done**（Issueも自動クローズ）
 
-完了したら、チェックを入れて「完了」セクションに移動します。
+### サブタスクなしのタスク
+
+横断タスクなどサブタスクがないものは `[-]` で明示的に進行中にできます。
 
 ```markdown
-- [x] 論文レビュー (完了: 2026-02-15)
+- [-] Webテスト対策（玉手箱）: Redgelines DBC, 日本総研, ISE
 ```
 
-### 4. 変更をコミットする
+## コマンド一覧
 
-タスクを更新したら、Gitでコミットします。
+| エイリアス | コマンド | 動作 |
+|-----------|---------|------|
+| `todo-push` | `python3 scripts/sync_to_issues.py` | TODO.md → Issue + Project更新 → git commit & push |
+| `todo-pull` | `python3 scripts/sync_from_issues.py` | Issue + Project → TODO.md反映 → git commit & push |
+| `todo-deadline` | `python3 scripts/check_deadlines.py` | 期限が近いタスクを通知 |
+| `todo` | - | git pull + TODO.mdを開く |
+| `todo-board` | - | Projectボードをブラウザで開く |
+
+## 日常のワークフロー
+
+### ローカルで作業する場合
 
 ```bash
-git add TODO.md
-git commit -m "タスク更新: 論文レビューを完了"
+# 1. TODO.mdを編集（タスク追加、チェック付け、[-]に変更など）
+vi TODO.md
+
+# 2. GitHubに同期（Issue更新 + Project反映 + git commit & push）
+todo-push
 ```
 
-## GitHub上での管理
+### GitHubで作業した場合
 
-このリポジトリはGitHub上で公開されています: https://github.com/Mako-Zaki/git-task-management
-
-### GitHub経由での変更をプッシュする
+GitHub上でIssueのチェックを付けたり、Projectボードのカードを動かした場合：
 
 ```bash
-# 変更をコミット
-git add TODO.md
-git commit -m "タスク更新: ○○を完了"
-
-# GitHubにプッシュ
-git push origin main
+# ローカルに反映（TODO.md更新 + git commit & push）
+todo-pull
 ```
 
-### 他の端末から最新の変更を取得する
+### 朝のルーティン
 
 ```bash
-# 最新の変更を取得
-git pull origin main
+todo-pull       # GitHubの最新状態を取得
+todo-deadline   # 今週の締切を確認
 ```
 
-### 新しい機能ブランチをGitHubにプッシュ
+## カテゴリ
 
-```bash
-# 新しいブランチを作成
-git checkout -b feature/新機能
+TODO.mdは以下のカテゴリで構成されています：
 
-# タスクを追加してコミット
-git add TODO.md
-git commit -m "タスク追加: 新機能のタスクを追加"
+| カテゴリ | 説明 |
+|---------|------|
+| 🔥 緊急・重要 | 最優先タスク |
+| 🎓 研究関連 | 論文、実験、文献調査 |
+| 💼 就職活動 | ES、面接、説明会（企業別に管理） |
+| 📅 日常・予定 | 買い物、手続き、イベント |
+| 💡 個人プロジェクト | 開発、学習、趣味 |
+| 📝 メモ・アイデア | まだタスク化していないメモ |
 
-# GitHubにプッシュ
-git push -u origin feature/新機能
+## 就職活動セクションの構成
+
+業界ごとにサブセクション分けし、企業単位で管理します。
+
+```
+💼 就職活動
+├── コンサル（シンクタンク）  → ラベル: コンサル
+│   ├── Redgelines
+│   ├── NRI
+│   └── ...
+├── 商社                     → ラベル: 商社
+│   ├── 三菱商事
+│   └── ...
+├── 通信・IT                 → ラベル: IT
+│   ├── SKY
+│   └── ...
+└── 横断タスク               → ラベル: 横断タスク
+    ├── Webテスト対策
+    └── 成績証明書の準備
 ```
 
-## 実践的な使い方の例
+## GitHub Issueのラベル
 
-### 毎朝のルーティン
+同期時に自動付与されます：
 
-```bash
-cd ~/git-task-management
-git pull origin main  # 最新の状態に更新
-# TODO.mdを開いて今日やることを確認・追加
+| ラベル | 説明 |
+|--------|------|
+| 就活 | 就職活動タスク |
+| コンサル | コンサル・シンクタンク |
+| 商社 | 商社 |
+| IT | 通信・IT |
+| 横断タスク | 複数企業にまたがるタスク |
+| 未着手 / 進行中 | ステータス |
+| 緊急 | 最優先 |
+
+## ファイル構成
+
+```
+git-task-management/
+├── TODO.md              # タスク本体（ローカルの真実）
+├── README.md            # このファイル
+├── scripts/
+│   ├── sync_to_issues.py    # push: TODO.md → GitHub
+│   ├── sync_from_issues.py  # pull: GitHub → TODO.md
+│   ├── check_deadlines.py   # 期限チェック
+│   └── project_config.py    # Project設定・共通関数
+├── GUIDE.md
+├── CHEATSHEET.md
+└── PROJECT_SETUP.md
 ```
 
-### タスク追加→完了→プッシュの流れ
+## スマホでの確認
 
-```bash
-# 1. TODO.mdを編集してタスクを追加
-# 2. 変更をコミット
-git add TODO.md
-git commit -m "タスク追加: ○○社のES作成"
-
-# 3. GitHubにプッシュ
-git push origin main
-
-# ... タスク作業 ...
-
-# 4. 完了したらTODO.mdを更新
-# 5. 再度コミット＆プッシュ
-git add TODO.md
-git commit -m "タスク完了: ○○社のES作成"
-git push origin main
-```
-
-### 複数端末での同期
-
-スマホやタブレットでGitHubアプリを使えば、外出先でもタスク確認ができます。
-
-```bash
-# 他の端末での変更を反映
-git pull origin main
-```
-
-## メリット
-
-- **履歴管理** - いつタスクを追加・完了したかが分かる
-- **複数端末対応** - スマホ、PC、タブレットどこからでもアクセス
-- **検索可能** - `git log --grep="就活"` でタスクを検索
-- **バックアップ** - GitHub上に自動でバックアップ
-- **カテゴリ管理** - 研究、就活、日常など分野別に整理
-- **期限管理** - 期限をタスクに記載して見逃し防止
+- **GitHub公式アプリ**: Issues / Projectsの確認・更新
+- **Working Copy（iOS）**: TODO.mdの直接編集 + commit & push
+- ブラウザ: Projectカンバンボードで一覧確認
