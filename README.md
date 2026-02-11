@@ -2,6 +2,25 @@
 
 人生に関わる全てのタスクを一元管理するシステムです。研究、就職活動、日常タスクなど、多方面のタスクをGitで履歴管理します。
 
+## ✨ 主な機能
+
+1. **📝 TODO.md** - カテゴリ別タスク管理
+2. **⏰ 期限チェック** - 自動で期限が近いタスクを通知
+3. **🔄 GitHub Issues連携** - TODO.mdから自動でIssue作成
+4. **📊 Projectボード** - カンバン形式で視覚的に管理
+
+### クイックスタート
+
+```bash
+# 期限が近いタスクをチェック
+python3 scripts/check_deadlines.py
+
+# TODO.mdからGitHub Issuesを作成
+python3 scripts/sync_to_issues.py
+```
+
+詳しい設定方法は [PROJECT_SETUP.md](PROJECT_SETUP.md) を参照してください。
+
 ## TODO.mdの構造
 
 `TODO.md`は以下のカテゴリで構成されています：
