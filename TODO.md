@@ -15,6 +15,8 @@
 ### 進行中
 <!-- 例: - [ ] 実験データ収集 (開始: 2026-02-11) -->
 - [-] **ミーティング資料**
+  - 📎 [ミーティング構成メモ](https://docs.google.com/document/d/1hkJYH94olrp-QnockTTcz0liK0QWkv-TSV5AUv8kt0I/edit?tab=t.0) 
+
     
 ### 完了
 <!-- 例: - [x] 文献調査 (完了: 2026-02-10) -->
@@ -30,11 +32,13 @@
   - [ ] DBC: ES提出（3月中）
   - [ ] DBC: Webテスト・玉手箱（3月中）
   - [ ] DBC: 面接（4月以降）
+  - 📎 [マイページ](https://job.axol.jp/bx/s/ridgelinez_27/mypage/login) 
 
 - [ ] **NRI**（シンクタンク）ITスペシャリスト？
   - [ ] 説明会参加（2月中）
   - [ ] ES提出（締切: 3/5 昼）
   - [ ] Webテスト・SPI（締切: 3/10）
+  - 📎 [マイページ](https://working.nri.co.jp/mypage2027/) 
 
 - [ ] **MRI**（シンクタンク）
   - [ ] ES提出（3月以降）
@@ -44,6 +48,7 @@
   - [ ] 2月末ワークショップ参加
   - [ ] ES提出（3月以降）
   - [ ] Webテスト・玉手箱（3月以降）
+  - 📎 [マイページ](https://job.axol.jp/bx/s/jri_27/mypage/login)
 
 ### 商社
 
@@ -58,7 +63,7 @@
   - [x] ES提出（締切: 2/24）
   - [ ] 成績証明書提出
   - [ ] AI面接（締切: 3/3）
-
+  - 📎 [マイページ](https://job.axol.jp/bx/s/sumitomocorp_27/mypage/login)  
 - [ ] **三井物産**（商社）
   - [ ] 第二クール（3/26）
 
@@ -71,10 +76,11 @@
 - [-] **SKY**（通信・IT）志望度高め
   - [ ] 早期選考 ES・Webテスト登録（締切: 2/19）企業オリジナル
   - [x] 会社説明会参加
-
+  - 📎 [マイページ](https://job.axol.jp/bx/s/skygroup_27/mypage/login)
 - [ ] **ISE / IBMエンジニア**（IT・ITスペシャリスト）
   - [ ] ES提出（締切: 2/22 正午）
   - [ ] Webテスト・玉手箱（締切: 2/24 正午）
+  - 📎 [マイページ](https://job.axol.jp/bx/s/ibm_group2_27/mypage/login)
 
 - [ ] **NEC**（通信・IT）
   - [ ] 選考開始（3月以降）
@@ -86,6 +92,7 @@
 - [-] Webテスト対策（玉手箱）: Redgelines DBC, 日本総研, ISE
 - [-] Webテスト対策（SPI）: NRI, MRI
 - [ ] 学校推薦についてもチェックしておく
+  - 📎 [就職希望者登録](https://career26.ist.osaka-u.ac.jp/)
 - [ ] 成績証明書の準備（三菱商事・住友商事で必要）
 
 ### 完了
@@ -127,7 +134,7 @@
 ---
 
 ## 📝 メモ・アイデア
-
+阪大推薦登録のユーザーid:ist-student、password:shushoku-osaka-u
 <!-- 後で整理したいアイデアや、タスク化する前のメモをここに -->
 
 ---
