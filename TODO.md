@@ -15,7 +15,8 @@
 ### 進行中
 <!-- 例: - [ ] 実験データ収集 (開始: 2026-02-11) -->
 - [-] **ミーティング資料**
-  - 📎 [ミーティング構成メモ](https://docs.google.com/document/d/1hkJYH94olrp-QnockTTcz0liK0QWkv-TSV5AUv8kt0I/edit?tab=t.0) 
+  - 📎 [ミーティング構成メモ](https://docs.google.com/document/d/1hkJYH94olrp-QnockTTcz0liK0QWkv-TSV5AUv8kt0I/edit?tab=t.0)
+  - 📎 [新規研究](file:///Users/okazakimakoto/Desktop/新規研究)
 
     
 ### 完了
@@ -64,7 +65,7 @@
   - 📎 [マイページ](https://job.axol.jp/bx/s/mitsubishicorp_27/mypage/login) 
 
 - [-] **住友商事**（商社）
-  - [x] ES提出（締切: 2/24）
+  - [ ] ES2提出（締切: 2/24）
   - [x] 成績証明書提出
   - [ ] AI面接（締切: 3/3）
   - 📎 [マイページ](https://job.axol.jp/bx/s/sumitomocorp_27/mypage/login)  
