@@ -1,4 +1,4 @@
-# タスク管理
+    # タスク管理
 
 ## 🔥 緊急・重要（最優先）
 
@@ -16,7 +16,7 @@
 <!-- 例: - [ ] 実験データ収集 (開始: 2026-02-11) -->
 - [-] **ミーティング資料**
   - 📎 [ミーティング構成メモ](https://docs.google.com/document/d/1hkJYH94olrp-QnockTTcz0liK0QWkv-TSV5AUv8kt0I/edit?tab=t.0)
-  - 📎 [新規研究](file:///Users/okazakimakoto/Desktop/新規研究)
+  - 📎 新規研究: `/Users/okazakimakoto/Desktop/新規研究`
 
     
 ### 完了
@@ -60,8 +60,9 @@
 - [-] **三菱商事**（商社）
   - [x] ES提出（締切: 2/17）
   - [x] Webテスト（締切: 2/18）
-  - [ ] AI面接（締切: 2/20）
+  - [x] AI面接（締切: 2/20）
   - [x] 成績証明書提出
+  - [ ] 選考待ち
   - 📎 [マイページ](https://job.axol.jp/bx/s/mitsubishicorp_27/mypage/login) 
 
 - [-] **住友商事**（商社）
