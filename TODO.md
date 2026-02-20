@@ -53,7 +53,7 @@
 
 - [-] **日本TCS（TATAコンサルタンシー）**（コンサルタント）
   - [x] ES提出（締切：2/15）
-  - [ ] 面接（3月以降）
+  - [ ] 面接（3/3）
 
 ### 商社
 
@@ -85,7 +85,7 @@
   - [ ] 面接
   - 📎 [マイページ](https://job.axol.jp/bx/s/skygroup_27/mypage/login)
 - [ ] **ISE / IBMエンジニア**（IT・ITスペシャリスト）
-  - [ ] ES提出（締切: 2/22 正午）
+  - [x] ES提出（締切: 2/22 正午）
   - [ ] Webテスト・玉手箱（締切: 2/24 正午）
   - 📎 [マイページ](https://job.axol.jp/bx/s/ibm_group2_27/mypage/login)
 
