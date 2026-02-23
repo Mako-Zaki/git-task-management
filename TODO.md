@@ -14,11 +14,12 @@
 
 ### 進行中
 <!-- 例: - [ ] 実験データ収集 (開始: 2026-02-11) -->
-- [-] **ミーティング資料**
+- [x] **ミーティング資料**
   - 📎 [ミーティング構成メモ](https://docs.google.com/document/d/1hkJYH94olrp-QnockTTcz0liK0QWkv-TSV5AUv8kt0I/edit?tab=t.0)
   - 📎 新規研究: `/Users/okazakimakoto/Desktop/新規研究`
 
-    
+- [-] **P4チュートリアル**
+- [-] **汎用計算可能なプログラマブルスイッチの応用先考案**
 ### 完了
 <!-- 例: - [x] 文献調査 (完了: 2026-02-10) -->
 
@@ -66,7 +67,7 @@
   - 📎 [マイページ](https://job.axol.jp/bx/s/mitsubishicorp_27/mypage/login) 
 
 - [-] **住友商事**（商社）
-  - [ ] ES2提出（締切: 2/24）
+  - [x] ES2提出（締切: 2/24）
   - [x] 成績証明書提出
   - [ ] AI面接（締切: 3/3）
   - 📎 [マイページ](https://job.axol.jp/bx/s/sumitomocorp_27/mypage/login)  
@@ -88,6 +89,8 @@
   - [x] ES提出（締切: 2/22 正午）
   - [ ] Webテスト・玉手箱（締切: 2/24 正午）
   - 📎 [マイページ](https://job.axol.jp/bx/s/ibm_group2_27/mypage/login)
+- [ ] **J:COM(エンジニア)**
+    -[ ] ES提出（締切： 2/24）
 
 - [ ] **NEC**（通信・IT）
   - [ ] 選考開始（3月以降）
